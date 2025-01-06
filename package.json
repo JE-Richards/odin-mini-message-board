@@ -1,0 +1,17 @@
+{
+  "name": "odin-mini-message-board",
+  "version": "1.0.0",
+  "description": "Second project from The Odin Project NodeJS course.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch app.js"
+  },
+  "keywords": [],
+  "author": "JE Richards (https://github.com/JE-Richards)",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}
