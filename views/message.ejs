@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <title>Homepage</title>
+  </head>
+  <body>
+    <%- include('./components/header', {}) %>
+    <main>
+      <div>
+        <p>User: <%= message.user %></p>
+        <p>Date: <%= message.added %></p>
+        <p>Message: <%= message.text %></p>
+      </div>
+      <a href="/">Home</a>
+    </main>
+  </body>
+</html>

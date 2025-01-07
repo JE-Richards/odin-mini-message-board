@@ -10,8 +10,10 @@
         <p>User: <%= messages[i].user %></p>
         <p>Date: <%= messages[i].added %></p>
         <p>Message: <%= messages[i].text %></p>
+        <a href="/message/<%= i %>">Open message</a>
       </div>
       <% } %>
+      <a href="/new">New Message</a>
     </main>
   </body>
 </html>
