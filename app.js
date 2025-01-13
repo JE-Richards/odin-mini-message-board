@@ -2,8 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const path = require('node:path');
 const indexRouter = require('./routes/indexRouter');
-const newRouter = require('./routes/newRouter');
-const messageRouter = require('./routes/messageRouter');
+const newFormRouter = require('./routes/newFormRouter');
+const viewMessageRouter = require('./routes/viewMessageRouter');
 const CustomNotFoundError = require('./errors/CustomNotFoundError');
 const { error } = require('node:console');
 
@@ -26,8 +26,8 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: true }));
 
-app.use('/new', newRouter(messages));
-app.use('/message', messageRouter(messages));
+app.use('/new', newFormRouter(messages));
+app.use('/message', viewMessageRouter(messages));
 app.use('/', indexRouter(messages));
 
 // Catch-all route
