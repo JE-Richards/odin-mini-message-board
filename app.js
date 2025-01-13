@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const path = require('node:path');
 const indexRouter = require('./routes/indexRouter');
@@ -7,7 +8,6 @@ const CustomNotFoundError = require('./errors/CustomNotFoundError');
 const { error } = require('node:console');
 
 const app = express();
-const PORT = 3000;
 
 const messages = [
   {
@@ -46,6 +46,8 @@ app.use((err, req, res, next) => {
   });
 });
 
-app.listen(PORT, () => {
-  console.log(`Express app - listening on http://localhost:3000`);
+app.listen(process.env.PORT, () => {
+  console.log(
+    `Express app - listening on ${process.env.HOST}:${process.env.PORT}`
+  );
 });
