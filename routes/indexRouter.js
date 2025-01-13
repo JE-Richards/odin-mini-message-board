@@ -1,10 +1,10 @@
 const { Router } = require('express');
 const indexController = require('../controllers/indexController');
 
-const indexRouter = (messages) => {
+const indexRouter = () => {
   const router = Router();
 
-  router.get('/', (req, res) => indexController.getIndex(req, res, messages));
+  router.get('/', (req, res) => indexController.getIndex(req, res));
 
   return router;
 };

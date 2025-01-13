@@ -1,16 +1,15 @@
+const db = require('../db/queries');
+
 const getNewForm = (req, res) => {
   res.render('form', {});
 };
 
-const postNewMessage = (req, res, messages) => {
-  const { author, message } = req.body;
+const postNewMessage = async (req, res) => {
+  const { username, message } = req.body;
 
-  if (author && message) {
-    messages.push({
-      text: message,
-      user: author,
-      added: new Date(),
-    });
+  if (username && message) {
+    await db.insertMessage(message, username);
+
     res.redirect('/');
   }
 };

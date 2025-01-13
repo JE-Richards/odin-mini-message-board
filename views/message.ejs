@@ -6,9 +6,9 @@
     <%- include('./components/header', {}) %>
     <main>
       <div>
-        <p>User: <%= message.user %></p>
-        <p>Date: <%= message.added %></p>
-        <p>Message: <%= message.text %></p>
+        <p>User: <%= message[0].username %></p>
+        <p>Date: <%= message[0].created_at %></p>
+        <p>Message: <%= message[0].message %></p>
       </div>
       <a href="/">Home</a>
     </main>
